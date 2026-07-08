@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-circles">
+        <div class="circle-1"></div>
+        <div class="circle-2"></div>
+    </div>
+
+    <div class="container">
+        <div class="form-card" id="formCard">
+            <h2>Create Account</h2>
+            <p class="subtitle">Join our community today</p>
+            
+            <form id="registrationForm" onsubmit="showSuccess(event)">
+                <div class="input-group">
+                    <input type="text" placeholder="Full Name" required>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" placeholder="Email Address" required>
+                    <span class="error-text">Please enter a valid email.</span>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" placeholder="Password (min 6 chars)" required minlength="6">
+                </div>
+
+                <button type="submit" class="btn-submit">Sign Up</button>
+            </form>
+        </div>
+
+        <div class="success-card" id="successCard">
+            <div class="icon-box">✓</div>
+            <h2>Success!</h2>
+            <p>Your account has been created successfully.</p>
+            <button onclick="location.reload()" class="btn-reset">Go Back</button>
+        </div>
+    </div>
+
+    <script>
+        function showSuccess(event) {
+            event.preventDefault(); // Prevents the page from actually refreshing
+            document.getElementById('formCard').style.display = 'none';
+            document.getElementById('successCard').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
